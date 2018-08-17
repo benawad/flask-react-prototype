@@ -1,8 +1,10 @@
 from flask import Flask, render_template, url_for, request, jsonify
 from flask_sqlalchemy import SQLAlchemy 
+from flask_cors import CORS
 
 app = Flask(__name__, static_url_path='/static', static_folder="build/static", template_folder="build")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+CORS(app)
 
 db = SQLAlchemy(app)
 
