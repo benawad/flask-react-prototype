@@ -1,18 +1,18 @@
 import React from "react";
-import Rating from "./Rating";
+import { Rating, Header, List } from "semantic-ui-react";
 
 export default class Movie extends React.Component {
   render() {
     const { movies } = this.props;
     return (
-      <ul>
+      <List>
         {movies.map(movie => (
-          <li key={movie.title}>
-            <span>{movie.title}</span>
-            <Rating rating={movie.rating} onClick={() => {}} />
-          </li>
+          <List.Item key={movie.title}>
+            <Header>{movie.title}</Header>
+            <Rating rating={movie.rating} maxRating={5} disabled />
+          </List.Item>
         ))}
-      </ul>
+      </List>
     );
   }
 }
