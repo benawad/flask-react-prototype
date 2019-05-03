@@ -18,7 +18,7 @@ const NewMovie = () => {
   }, []);
 
   return (
-    <Container>
+    <Container style={{ marginTop: 40 }}>
       <Form>
         <Form.Field>
           <Input
